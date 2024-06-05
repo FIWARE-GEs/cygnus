@@ -282,6 +282,9 @@ Coming soon.
 | batch\_retry\_intervals | no | 5000 | Comma-separated list of intervals (in miliseconds) at which the retries regarding not persisted batches will be done. First retry will be done as many miliseconds after as the first value, then the second retry will be done as many miliseconds after as second value, and so on. If the batch\_ttl is greater than the number of intervals, the last interval is repeated. |
 | backend.enable\_cache | no | false | <i>true</i> or <i>false</i>, <i>true</i> enables the creation of a Cache, <i>false</i> disables the creation of a Cache. |
 | persist\_errors | no | true | if there is an exception when trying to persist data into storage then error is persisted into a table |
+| persistence_policy.max_records |	no |	-1 |	Maximum number of records allowed for a table before it is capped. -1 disables this policy. |
+| persistence_policy.expiration_time |	no |	-1 |	Maximum number of seconds a record is maintained in a table before expiration. -1 disables this policy. |
+| persistence_policy.checking_time |	no |	3600 |	Frequency (in seconds) at which the sink checks for record expiration. |
 
 A configuration example could be:
 
